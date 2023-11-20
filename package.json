@@ -1,0 +1,19 @@
+{
+    "name": "@monorepo-firebase",
+    "description": "モノレポのfirebaseプロジェクトです",
+    "private": true,
+    "workspaces": [
+        "packages/ts-router",
+        "packages/backend",
+        "packages/frontend"
+    ],
+    "scripts": {
+        "prepare": "npm run compile",
+        "compile": "tsc -b tsconfig.json ",
+        "start:dev:api": "npm run start:dev -w @monorepo-firebase/backend",
+        "start:app": "npm run dev -w @monorepo-firebase/frontend"
+    },
+    "dependencies": {
+        "typescript": "^5.2.2"
+    }
+}
